@@ -15,8 +15,10 @@ class Main : App() {
     override fun init() {
         val spring = ClassPathXmlApplicationContext("/spring.xml")
         FX.dicontainer = object : DIContainer {
-            override fun <T : Any> getInstance(type: KClass<T>): T =
-                    spring.getBean(type.java)
+            override fun <T : Any> getInstance(type: KClass<T>): T {
+                println("looking for $type")
+                    return spring.getBean(type.java)
+                    }
         }
 
     }
