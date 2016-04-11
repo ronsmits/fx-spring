@@ -1,4 +1,4 @@
-package spring
+package inject
 
 import org.springframework.stereotype.Component
 
